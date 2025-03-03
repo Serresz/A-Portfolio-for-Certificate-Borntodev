@@ -1,0 +1,19 @@
+h1 {
+    color: plum;
+    font-size: 50px;
+}
+
+body {
+    background-color: azure;
+}
+
+#testzaza {
+    font-size: 40px;
+}
+
+#cerfiticate {
+    border-radius: 35px;
+    padding: 15px;
+    width: 500px;
+}
+
