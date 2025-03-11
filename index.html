@@ -5,33 +5,105 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Likit - Fundamential Web Dev</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./styles/styles.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+
 </head>
 
 <body>
-    <center>
-        <h1>Hi , My name is LikitInwza007</h1>
-        <h2>Hi , My name is LikitInwza007</h2>
-        <h3>Hi , My name is LikitInwza007</h3>
-        <h4>Hi , My name is LikitInwza007</h4>
-        <h5>Hi , My name is LikitInwza007</h5>
-        <h6>Hi , My name is LikitInwza007</h6>
+    <div class="container">
+        <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+            <a href="index.html"
+                class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+                <span class="fs-3">LikitInwza</span>
+            </a>
 
-        <h1 style="color: #ffc000; text-align: center">
-            👨🏻‍💻เรียนรู้ทักษะแห่งอนาคต</h1>
-        <!-- การกับหนด attribute หรือ คุณลักษณะ ตัวอย่างเช่น height กับ width จะเป็นค่า px หรือ พิกเซลโดยอัตโนมัติ-->
-        <img id="cerfiticate" src="GPT-Acadamy.png" width="500"><br>
-        <a href="#" class="btn btn-primary">Click Me</a>
-        <p id="testzaza">Hi , My name is LikitInwza007<br>Service is me</p>
-    </center>
+            <ul class="nav nav-pills">
+                <li class="nav-item"><a href="#" class="nav-link link-underline-opacity-100 text-black" text-black"
+                        aria-current="page">หน้าแรก</a></li>
+                <li class="nav-item"><a href="#cert"
+                        class="nav-link link-underline-opacity-100 text-black">เกียรติบัตร</a>
+                </li>
+                <li class="nav-item"><a href="#contact"
+                        class="nav-link link-underline-opacity-100 text-black">ติดต่อน้องแบงค์</a></li>
+            </ul>
+        </header>
 
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
-        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+
+        <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+            <div class="col-10 col-sm-8 col-lg-6">
+                <img src="./imgs/me.jpg" class="d-block mx-lg-auto img-fluid" alt="Avatar Me" width="700" height="500"
+                    loading="lazy">
+            </div>
+            <div class="col-lg-6">
+                <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">👋 ดีครับ ! เราคือแบงค์</h1>
+                <p class="lead">กำลังฝึกเขียนโปรแกรม และ หัดทำเว็บอยู่
+                    ฝันอยากเป็น <br><mark class="fw-semibold">Software Engineer</mark> 🚀 แต่ตอนนี้ยังมือใหม่อยู่เลย!
+                    <br>
+                    <br><mark>ทุกบรรทัดที่เขียน คือการลองผิดลองถูกของผม</mark> 💕
+                </p>
+            </div>
+        </div>
+
+        <div class="px-4 pt-5 my-5 text-center border-bottom">
+            <h4 class="display-6 fw-bold text-body-emphasis" id="cert">เกียรติบัตร</h4>
+        </div>
+
+        <div class="container text-center">
+            <div class="row row-cols-1 row-cols-md-2 g-4">
+                <div class="col">
+                    <div class="card shadow-lg p-3 bg-body-tertiary rounded h-100 d-flex flex-column">
+                        <img src="./imgs/cert-gpt.png" class="card-img-top" alt="...">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">ChatGPT for Developers</h5>
+                            <p class="card-text flex-grow-1">เรียนรู้และใช้งาน Chat GPT ในการเขียนโปรแกรมจาก <mark
+                                    class="fw-semibold">BorntoDev</mark></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card shadow-lg p-3 bg-body-tertiary rounded h-100 d-flex flex-column">
+                        <img src="./imgs/cert-github.png" class="card-img-top" alt="...">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">GitHub for Developer</h5>
+                            <p class="card-text flex-grow-1">เรียนรู้และใช้งาน GitHub
+                                เผื่อใช้ในการเขียนโค้ดแบบเป็นทีมได้ดียิ่งขึ้น โดยเรียนจาก <mark
+                                    class="fw-semibold">BorntoDev</mark></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br><br><br><br>
+
+        <footer class="text-black pt-4 pb-4" id="contact">
+            <div class="container text-center">
+                <div class="card shadow-lg p-4 rounded">
+                    <div class="card-body">
+                        <h3 class="card-title text-center fw-bold display-4">
+                            "ขอบคุณแม่มากๆ ที่คอยสนับสนุนและให้กำลังใจมาตลอดในการเรียนรู้และพัฒนาตัวเองในการเขียนโค้ด
+                            แม่เป็นแรงบันดาลใจที่สำคัญที่ทำให้แบงค์ไม่ยอมแพ้และพัฒนาตัวเองขึ้นเรื่อยๆ
+                            ขอบคุณแม่ที่เข้าใจและคอยอยู่เคียงข้างแบงค์ตลอดไปนะครับ 💻❤️"
+                        </h3>
+                    </div>
+                </div>
+                <br><br>
+                <div class=" d-flex justify-content-center gap-3">
+                    <a href="https://www.facebook.com/withserresz"><i class="bi bi-facebook fs-2"></i></a>
+                    <a href="https://www.instagram.com/qu1nxc._/"><i class="bi bi-instagram fs-2"></i></a>
+                    <a href="https://github.com/Serresz"><i class="bi bi-github fs-2"></i></a>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
 </body>
 
