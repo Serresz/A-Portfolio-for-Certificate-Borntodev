@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Likit - Weather Check By OpenWeatherMap</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body style="background-image: url('https://source.unsplash.com/1600x900/?weather'); background-size: cover; background-repeat: no-repeat; background-attachment: fixed; color: #333;">
+    <div class="container">
+        <div class="card mx-auto mt-5" style="max-width: 600px; background-color: rgba(255, 255, 255, 0.8); border-radius: 15px; padding: 40px; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);">
+            <div class="card-body">
+                <h1 class="text-center mb-4"><%= weatherData ? 'สภาพอากาศในจังหวัด ' + weatherData.city : 'ตรวจสอบสภาพอากาศ' %></h1>
+                <% if (weatherData) { %>
+                    <table class="table">
+                        <tr>
+                            <th scope="row">อุณหภูมิ</th>
+                            <td><%= weatherData.temperature %>°C</td>
+                            <td rowspan="4" class="text-center">
+                                <% if (weatherData.icon) { %>
+                                    <img src="http://openweathermap.org/img/w/<%= weatherData.icon %>.png" alt="Weather Icon" style="width: 100px; height: 100px; filter: drop-shadow(4px 4px 8px rgba(0, 0, 0, 0.3));">
+                                <% } %>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">คำอธิบาย</th>
+                            <td><%= weatherData.description %></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">ความชื้น</th>
+                            <td><%= weatherData.humidity %>%</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">ความเร็วลม</th>
+                            <td><%= weatherData.windSpeed %> m/s</td>
+                        </tr>
+                    </table>
+                <% } %>
+                <% if (error) { %>
+                    <div class="alert alert-danger mt-3" role="alert">
+                        <%= error %>
+                    </div>
+                <% } %>
+                <form action="/api/weather/" method="get" class="mt-4">
+                    <div class="form-group">
+                        <label for="city">เลือกจังหวัด:</label>
+                        <select class="form-control" id="city" name="city" required>
+                            <option value="">เลือกจังหวัด</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block" style="background-color: #007bff; color: white; padding: 12px 24px; border: none; border-radius: 8px; font-size: 16px;">ตรวจสอบสภาพอากาศ</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            fetch('/provinces')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error("Network response was not ok");
+                    }
+                    return response.json();
+                })
+                .then(provinces => {
+                    const select = document.getElementById('city');
+                    if (select) {
+                        provinces.forEach(province => {
+                            const option = document.createElement('option');
+                            option.value = province.name_en;
+                            option.textContent = province.name_th;
+                            select.appendChild(option);
+                        });
+                    } else {
+                        console.error("Select element not found!");
+                    }
+                })
+                .catch(error => console.error("Error fetch provinces : ", error));
+        });
+    </script>
+</body>
+</html>

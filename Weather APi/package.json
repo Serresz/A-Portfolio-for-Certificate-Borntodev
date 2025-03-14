@@ -1,0 +1,35 @@
+{
+  "name": "weather-api",
+  "version": "1.0.0",
+  "main": "api.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "set DEBUG=app & nodemon app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "axios": "^1.8.3",
+    "crypto": "^1.0.1",
+    "debug": "^4.4.0",
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "express-mongo-sanitize": "^2.2.0",
+    "express-rate-limit": "^7.5.0",
+    "helmet": "^8.0.0",
+    "mongoose": "^8.12.1",
+    "morgan": "^1.10.0",
+    "nodemon": "^3.1.9",
+    "xss-clean": "^0.1.4"
+  },
+  "nodemonConfig": {
+    "restartable": "rs",
+    "delay": 2000,
+    "env": {
+      "PORT": 4444,
+      "API_WEATHER_KEY": "8d92622d046d5be0554c594b29db18b1",
+      "MONGODB_URL": "mongodb+srv://likitinwza007:poopozA60%40@clusterlikit.kz03g.mongodb.net/"
+    }
+  }
+}
